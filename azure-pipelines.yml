@@ -11,4 +11,12 @@ steps:
 - task: ExecMicroFocusTests@0
   inputs:
     Test1: 'C:\Scenarios-Multiple'
+    fsReportPath: 'C:\Scenarios-Multiple-Results'
+    controllerPollingInterval: '50'
+    PerScenarioTimeOut: '12'
+    pollingInterval: '15'
+    analysisTemplate: 'C:\Scenarios-Multiple\templates\MyTemplate1\MyTemplate1.tem'
     displayController: '1'
+    fsTimeout: '1200'
+    resultsFilename: 'logs.xml'
+    threatFailureAsError: false
