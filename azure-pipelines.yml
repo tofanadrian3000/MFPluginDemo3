@@ -24,8 +24,5 @@ steps:
 # -> default parameters are not required 
 - task: ExecMicroFocusTests@0
   inputs:
-    Test1: 'C:\Scenarios-Multiple'
-    fsRep: 'C:\LoadRunnerTestsResults'
-    controllerPollingInterval: '30'
-    PerScenarioTimeOut: '10'
-    pollingInterval: '10'
+  
+    
