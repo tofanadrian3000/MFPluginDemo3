@@ -20,9 +20,18 @@ steps:
 #     resultsFilename: 'logs.xml'
 #     threatFailureAsError: false
 
-# Default configuration (on a multiple scenarios folder)-> 
-# -> default parameters are not required 
+
+# # Default configuration (on a multiple scenarios folder)-> 
+# # -> default parameters are not required 
+# - task: ExecMicroFocusTests@0
+#   inputs:
+#     Test1: 'C:\Scenarios-Multiple'
+#     fsReportPath: 'C:\LoadRunnerTestsResults'
+
 - task: ExecMicroFocusTests@0
   inputs:
-  
-    
+    Test1: 'C:\Scenarios-Multiple'
+    fsReportPath: 'C:\LoadRunnerTestsResults'
+    controllerPollingInterval: '35'
+    PerScenarioTimeOut: '15'
+    pollingInterval: '15'
