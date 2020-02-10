@@ -30,8 +30,6 @@ steps:
 
 - task: ExecMicroFocusTests@0
   inputs:
-    Test1: 'C:\Scenarios-Multiple'
-    fsReportPath: 'C:\LoadRunnerTestsResults'
-    controllerPollingInterval: '35'
-    PerScenarioTimeOut: '15'
-    pollingInterval: '15'
+    Test1: 'C:\Scenarios-Multiple\Scenario1.lrs'
+    analysisTemplate: 'C:\Scenarios-Multiple\templates\MyTemplate1\MyTemplate1.tem'
+
