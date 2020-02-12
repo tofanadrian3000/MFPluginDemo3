@@ -24,7 +24,7 @@ steps:
     resultsFilename: 'logs.xml'
 
 
-# The task should fail because of the timeout for scenario
+# The scenario will be stopped after the specified timeout
 - task: ExecMicroFocusTests@0
   inputs:
     Test1: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
