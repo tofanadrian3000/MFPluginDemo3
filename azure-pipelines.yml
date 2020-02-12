@@ -7,29 +7,34 @@ pool: 'AzureVms'
 
 steps:
 
-# - task: ExecMicroFocusTests@0
-#   inputs:
-#     Test1: 'C:\Scenarios-Multiple'
-#     fsReportPath: 'C:\Scenarios-Multiple-Results'
-#     controllerPollingInterval: '50'
-#     PerScenarioTimeOut: '12'
-#     pollingInterval: '15'
-#     analysisTemplate: 'C:\Scenarios-Multiple\templates\MyTemplate1\MyTemplate1.tem'
-#     displayController: '1'
-#     fsTimeout: '1200'
-#     resultsFilename: 'logs.xml'
-#     threatFailureAsError: false
-
-
-# # Default configuration (on a multiple scenarios folder)-> 
-# # -> default parameters are not required 
-# - task: ExecMicroFocusTests@0
-#   inputs:
-#     Test1: 'C:\Scenarios-Multiple'
-#     fsReportPath: 'C:\LoadRunnerTestsResults'
-
+# Parameters are set
+# The folder contains two scenarios:
+#   - 2UsersPassedScenario.lrs - that should pass
+#   - 2UsersFailedScenario.lrs - that should fail
+# Considering the fact that one scenario has failed, the task will be marked as failed
 - task: ExecMicroFocusTests@0
   inputs:
-    Test1: 'C:\Scenarios-Multiple\Scenario1.lrs'
-    analysisTemplate: 'C:\Scenarios-Multiple\templates\MyTemplate1\MyTemplate1.tem'
+    Test1: 'C:\Scenarios-Multiple2'
+    fsReportPath: 'C:\Scenarios-Multiple-Results'
+    controllerPollingInterval: '50'
+    PerScenarioTimeOut: '12'
+    pollingInterval: '15'
+    analysisTemplate: 'C:\Scenarios-Multiple2\templates\MyTemplate1\MyTemplate1.tem'
+    fsTimeout: '1200'
+    resultsFilename: 'logs.xml'
 
+
+# The task should fail because of the timeout for scenario
+- task: ExecMicroFocusTests@0
+  inputs:
+    Test1: 'C:\Scenarios-Multiple2\2UsersPassedScenario.lrs'
+    PerScenarioTimeOut: '1'
+  condition: always()
+
+
+# The task should fail because of the total timeout
+- task: ExecMicroFocusTests@0
+  inputs:
+    Test1: 'C:\Scenarios-Multiple'
+    fsTimeout: '30'
+  condition: always()
