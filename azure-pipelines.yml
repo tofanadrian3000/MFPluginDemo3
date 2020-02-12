@@ -27,7 +27,7 @@ steps:
 # The task should fail because of the timeout for scenario
 - task: ExecMicroFocusTests@0
   inputs:
-    Test1: 'C:\Scenarios-Multiple2\2UsersPassedScenario.lrs'
+    Test1: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
     PerScenarioTimeOut: '1'
   condition: always()
 
