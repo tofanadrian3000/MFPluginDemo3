@@ -12,28 +12,28 @@ steps:
 #   - 2UsersPassedScenario.lrs - that should pass
 #   - 2UsersFailedScenario.lrs - that should fail
 # Considering the fact that one scenario has failed, the task will be marked as failed
-- task: ExecMicroFocusTests@0
+- task: ExecMicroFocusTestsDemo6@0
   inputs:
-    Test1: 'C:\Scenarios-Multiple2'
-    fsReportPath: 'C:\Scenarios-Multiple-Results'
-    controllerPollingInterval: '50'
-    PerScenarioTimeOut: '12'
-    pollingInterval: '15'
-    fsTimeout: '1200'
-    resultsFilename: 'logs.xml'
-
+    SourcePath: 'C:\Scenarios-Multiple2'
+    ResultsDirectory: 'C:\Scenarios-Multiple-Results'
+    ControllerPollingInterval: '50'
+    ScenarioExecutionTimeout: '12'
+    DisplayController: true
+    ThreatFailuresAsErrors: false
+    TaskTimeout: '15'
+    BuildLabel: 'Build-$(Build.BuildNumber)'
 
 # The scenario will be stopped after the specified timeout
-- task: ExecMicroFocusTests@0
+- task: ExecMicroFocusTestsDemo6@0
   inputs:
-    Test1: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
-    PerScenarioTimeOut: '1'
+    SourcePath: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
+    ScenarioExecutionTimeout: '1'
   condition: always()
 
 
 # The task should fail because of the total timeout
-- task: ExecMicroFocusTests@0
+- task: ExecMicroFocusTestsDemo6@0
   inputs:
-    Test1: 'C:\Scenarios-Multiple'
-    fsTimeout: '30'
+    SourcePath: 'C:\Scenarios-Multiple'
+    ScenarioExecutionTimeout: '30'
   condition: always()
