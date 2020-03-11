@@ -20,7 +20,7 @@ steps:
     ScenarioExecutionTimeout: '12'
     DisplayController: false
     ThreatFailuresAsErrors: false
-    TaskTimeout: '15'
+    TaskTimeout: '1500'
     BuildLabel: 'Build-$(Build.BuildNumber)'
 
 # # The scenario will be stopped after the specified timeout
