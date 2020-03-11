@@ -18,22 +18,22 @@ steps:
     ResultsDirectory: 'C:\Scenarios-Multiple-Results'
     ControllerPollingInterval: '50'
     ScenarioExecutionTimeout: '12'
-    DisplayController: true
+    DisplayController: false
     ThreatFailuresAsErrors: false
     TaskTimeout: '15'
     BuildLabel: 'Build-$(Build.BuildNumber)'
 
-# The scenario will be stopped after the specified timeout
-- task: ExecMicroFocusTestsDemo6@0
-  inputs:
-    SourcePath: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
-    ScenarioExecutionTimeout: '1'
-  condition: always()
+# # The scenario will be stopped after the specified timeout
+# - task: ExecMicroFocusTestsDemo6@0
+#   inputs:
+#     SourcePath: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
+#     ScenarioExecutionTimeout: '1'
+#   condition: always()
 
 
-# The task should fail because of the total timeout
-- task: ExecMicroFocusTestsDemo6@0
-  inputs:
-    SourcePath: 'C:\Scenarios-Multiple'
-    ScenarioExecutionTimeout: '30'
-  condition: always()
+# # The task should fail because of the total timeout
+# - task: ExecMicroFocusTestsDemo6@0
+#   inputs:
+#     SourcePath: 'C:\Scenarios-Multiple'
+#     ScenarioExecutionTimeout: '30'
+#   condition: always()
