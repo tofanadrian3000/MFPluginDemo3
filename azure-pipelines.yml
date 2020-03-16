@@ -13,28 +13,25 @@ steps:
 #   - 2UsersFailedScenario.lrs - that should fail
 # Considering the fact that one scenario has failed, the task will be marked as failed
 
-- task: ExecMicroFocusTestsDemo6@0
+- task: ExecMicroFocusTestsDemo7@0
   inputs:
     SourcePath: 'C:\Scenarios-Multiple2'
     ResultsDirectory: 'C:\Scenarios-Multiple-Results'
     ControllerPollingInterval: '50'
     ScenarioExecutionTimeout: '12'
-    DisplayController: false
     ThreatFailuresAsErrors: false
     TaskTimeout: '1500'
-    BuildLabel: 'Build$(Build.BuildId)-$(Build.BuildNumber)'
 
 # The scenario will be stopped after the specified timeout
-- task: ExecMicroFocusTestsDemo6@0
+- task: ExecMicroFocusTestsDemo7@0
   inputs:
     SourcePath: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
     ScenarioExecutionTimeout: '1'
-    BuildLabel: 'Build$(Build.BuildId)-$(Build.BuildNumber)'
   condition: always()
 
 
 #The task should fail because of the total timeout
-- task: ExecMicroFocusTestsDemo6@0
+- task: ExecMicroFocusTestsDemo7@0
   inputs:
     SourcePath: 'C:\Scenarios-Multiple'
     ScenarioExecutionTimeout: '1'
