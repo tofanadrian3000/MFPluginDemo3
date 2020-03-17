@@ -2,7 +2,8 @@
 trigger:
 - master
 
-pool: 'Default'
+pool: 'Win2016'
+#pool: 'Default'
 #pool: 'AzureVms'
 
 steps:
