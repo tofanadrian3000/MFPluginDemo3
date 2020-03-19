@@ -12,7 +12,7 @@ steps:
 - task: ExecMicroFocusTestsDemo9@0
   inputs:
     SourcePath: 'C:\Scenarios-Multiple2\Scenarios-Single\Scenarios-Single\Scenarios-Single\Scenarios-Single'
-    ResultsDirectory: 'C:\LRLRLR'
+    ResultsDirectory: 'C:\LR LR LR\asd asd\resultsDirectory'
     ControllerPollingInterval: '50'
     ScenarioExecutionTimeout: '12'
     TreatFailuresAsErrors: false
