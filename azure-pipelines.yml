@@ -17,11 +17,25 @@ steps:
     ScenarioExecutionTimeout: '12'
     TreatFailuresAsErrors: false
     TaskTimeout: '1500'
-    PublishScenarioResults: false
+    PublishScenarioResults: true
     PublishArtifactsManually: true
-    BuildArtifactsDirectory: C:\PersonalArtifacts
+    BuildArtifactsDirectory: 'C:\PersonalArtifacts\Personal Artifacts\Personal Artifacts'
     PublishTestReportsManually: true
-    BuildTestReportsDirectory: C:\TestResults
+    BuildTestReportsDirectory: 'C:\TestResults\TestResults\Test Results\Test Results'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'C:\PersonalArtifacts\Personal Artifacts\Personal Artifacts'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '*.xml'
+    searchFolder: 'C:\TestResults\TestResults\Test Results\Test Results'
+
+
 
 # # The scenario will be stopped after the specified timeout
 # - task: ExecMicroFocusTestsDemo8@0
