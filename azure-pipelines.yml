@@ -2,40 +2,39 @@
 trigger:
 - master
 
-pool: 'Win8.1'
-#pool: 'Win2016'
+#pool: 'Win8.1'
+pool: 'Win2016'
 #pool: 'Default'
 #pool: 'AzureVms'
 
 steps:
 
-# Parameters are set
-# The folder contains two scenarios:
-#   - 2UsersPassedScenario.lrs - that should pass
-#   - 2UsersFailedScenario.lrs - that should fail
-# Considering the fact that one scenario has failed, the task will be marked as failed
-
 - task: ExecMicroFocusTestsDemo8@0
   inputs:
-    SourcePath: 'C:\Scenarios-Multiple2'
-    ResultsDirectory: 'C:\Scenarios-Multiple-Results'
+    SourcePath: 'C:\Scenarios-Multiple2\Scenarios-Single\Scenarios-Single\Scenarios-Single\Scenarios-Single'
+    ResultsDirectory: 'C:\LRLRLR'
     ControllerPollingInterval: '50'
     ScenarioExecutionTimeout: '12'
     TreatFailuresAsErrors: false
     TaskTimeout: '1500'
+    PublishScenarioResults: false
+    PublishArtifactsManually: true
+    BuildArtifactsDirectory: C:\PersonalArtifacts
+    PublishTestReportsManually: true
+    BuildTestReportsDirectory: C:\TestResults
 
-# The scenario will be stopped after the specified timeout
-- task: ExecMicroFocusTestsDemo8@0
-  inputs:
-    SourcePath: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
-    ScenarioExecutionTimeout: '1'
-  condition: always()
+# # The scenario will be stopped after the specified timeout
+# - task: ExecMicroFocusTestsDemo8@0
+#   inputs:
+#     SourcePath: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
+#     ScenarioExecutionTimeout: '1'
+#   condition: always()
 
 
-#The task should fail because of the total timeout
-- task: ExecMicroFocusTestsDemo8@0
-  inputs:
-    SourcePath: 'C:\Scenarios-Multiple'
-    ScenarioExecutionTimeout: '1'
-    TaskTimeout: '10'
-  condition: always()
+# #The task should fail because of the total timeout
+# - task: ExecMicroFocusTestsDemo8@0
+#   inputs:
+#     SourcePath: 'C:\Scenarios-Multiple'
+#     ScenarioExecutionTimeout: '1'
+#     TaskTimeout: '10'
+#   condition: always()
