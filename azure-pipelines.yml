@@ -9,7 +9,7 @@ pool: 'Win2016'
 
 steps:
 
-- task: ExecMicroFocusTestsDemo9@0
+- task: ExecMicroFocusTestsDemo10@0
   inputs:
     SourcePath: 'C:\Scenarios-Multiple2\Scenarios-Single\Scenarios-Single\Scenarios-Single\Scenarios-Single'
     ResultsDirectory: 'C:\LR LR LR\asd asd\resultsDirectory'
