@@ -25,7 +25,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'C:\PersonalArtifacts\Personal Artifacts\Personal Artifacts'
+    PathtoPublish: 'C:\Personal Artifacts\Personal Artifacts\Personal Artifacts'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
@@ -33,7 +33,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '*.xml'
-    searchFolder: 'C:\TestResults\TestResults\Test Results\Test Results'
+    searchFolder: 'C:\Test Results\TestResults\Test Results\Test Results'
 
 
 
