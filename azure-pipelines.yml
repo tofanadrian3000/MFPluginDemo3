@@ -11,17 +11,17 @@ steps:
 
 - task: ExecMicroFocusTestsDemo10@0
   inputs:
-    SourcePath: 'C:\Scenarios-Multiple2\Scenarios-Single\Scenarios-Single\Scenarios-Single\Scenarios-Single'
-    ResultsDirectory: 'C:\LR LR LR\asd asd\resultsDirectory'
+    SourcePath: 'C:\Scenarios-Multiple2\Scenarios Single\Scenarios-Single\Scenarios-Single\Scenarios-Single'
+    ResultsDirectory: 'C:\LR LR LR\asd asd\results Directory'
     ControllerPollingInterval: '50'
     ScenarioExecutionTimeout: '12'
     TreatFailuresAsErrors: false
     TaskTimeout: '1500'
     PublishScenarioResults: true
     PublishArtifactsManually: true
-    BuildArtifactsDirectory: 'C:\PersonalArtifacts\Personal Artifacts\Personal Artifacts'
+    BuildArtifactsDirectory: 'C:\Personal Artifacts\Personal Artifacts\Personal Artifacts'
     PublishTestReportsManually: true
-    BuildTestReportsDirectory: 'C:\TestResults\TestResults\Test Results\Test Results'
+    BuildTestReportsDirectory: 'C:\Test Results\TestResults\Test Results\Test Results'
 
 - task: PublishBuildArtifacts@1
   inputs:
