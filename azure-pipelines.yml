@@ -11,7 +11,7 @@ steps:
 
 - task: ExecuteLoadRunnerTestsRelease@0
   inputs:
-    SourcePath: 'C:\Scenarios-Multiple2\Scenarios Single\Scenarios-Single\Scenarios-Single\Scenarios-Single'
+    SourcePath: 'C:\Scenarios-Multiple2'
     ResultsDirectory: 'C:\asd asd\results Directory'
     ControllerPollingInterval: '50'
     ScenarioExecutionTimeout: '12'
