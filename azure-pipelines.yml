@@ -23,6 +23,21 @@ steps:
     PublishTestReportsManually: true
     BuildTestReportsDirectory: 'C:\Test Results\TestResults\Test Results\Test Results'
 
+- task: ExecuteLoadRunnerTestsRelease@1
+  inputs:
+    SourcePath: 'C:\Scenarios-Multiple2'
+    ResultsDirectory: 'C:\asd asd\results Directory'
+    ControllerPollingInterval: '50'
+    ScenarioExecutionTimeout: '12'
+    TreatFailuresAsErrors: false
+    TaskTimeout: '1500'
+    PublishScenarioResults: true
+    PublishArtifactsManually: true
+    BuildArtifactsDirectory: 'C:\Personal Artifacts\Personal Artifacts\Personal Artifacts'
+    PublishTestReportsManually: true
+    BuildTestReportsDirectory: 'C:\Test Results\TestResults\Test Results\Test Results'
+  condition: always
+  
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'C:\Personal Artifacts\Personal Artifacts\Personal Artifacts'
