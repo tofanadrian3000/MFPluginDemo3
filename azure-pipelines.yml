@@ -4,24 +4,10 @@ trigger:
 
 #pool: 'Win8.1'
 #pool: 'Win2016'
-pool: 'Default'
-#pool: 'AzureVms'
+#pool: 'Default'
+pool: 'AzureVms'
 
 steps:
-
-- task: ExecuteLoadRunnerTestsRelease@0
-  inputs:
-    SourcePath: 'C:\Scenarios-Multiple2'
-    ResultsDirectory: 'C:\asd asd\results Directory'
-    ControllerPollingInterval: '50'
-    ScenarioExecutionTimeout: '12'
-    TreatFailuresAsErrors: false
-    TaskTimeout: '1500'
-    PublishScenarioResults: true
-    PublishArtifactsManually: true
-    BuildArtifactsDirectory: 'C:\Personal Artifacts\Personal Artifacts\Personal Artifacts'
-    PublishTestReportsManually: true
-    BuildTestReportsDirectory: 'C:\Test Results\TestResults\Test Results\Test Results'
 
 - task: ExecuteLoadRunnerTestsRelease@1
   inputs:
