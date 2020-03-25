@@ -2,54 +2,10 @@
 trigger:
 - master
 
-#pool: 'Win8.1'
-#pool: 'Win2016'
-#pool: 'Default'
 pool: 'AzureVms'
 
 steps:
-
-- task: ExecuteLoadRunnerTestsRelease@1
+- task: ExecuteLoadRunnerProfessional@0
   inputs:
-    SourcePath: 'C:\Scenarios-Multiple2\Scenarios-Single\Scenarios Single\Scenarios-Single\Scenarios Single'
-    ResultsDirectory: 'C:\asd asd\results Directory'
-    ControllerPollingInterval: '50'
-    ScenarioExecutionTimeout: '12'
-    TreatFailuresAsErrors: false
-    TaskTimeout: '1500'
-    PublishScenarioResults: true
-    PublishArtifactsManually: true
-    BuildArtifactsDirectory: 'C:\Personal Artifacts\Personal Artifacts\Personal Artifacts'
-    PublishTestReportsManually: true
-    BuildTestReportsDirectory: 'C:\Test Results\TestResults\Test Results\Test Results'
-  condition: always()
+    SourcePath: 'C:\Scenarios'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'C:\Personal Artifacts\Personal Artifacts\Personal Artifacts'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '*.xml'
-    searchFolder: 'C:\Test Results\TestResults\Test Results\Test Results'
-
-
-
-# # The scenario will be stopped after the specified timeout
-# - task: ExecMicroFocusTestsDemo8@0
-#   inputs:
-#     SourcePath: 'C:\Scenarios-Multiple\10UsersPassedScenario.lrs'
-#     ScenarioExecutionTimeout: '1'
-#   condition: always()
-
-
-# #The task should fail because of the total timeout
-# - task: ExecMicroFocusTestsDemo8@0
-#   inputs:
-#     SourcePath: 'C:\Scenarios-Multiple'
-#     ScenarioExecutionTimeout: '1'
-#     TaskTimeout: '10'
-#   condition: always()
